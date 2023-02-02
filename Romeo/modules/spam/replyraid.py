@@ -20,7 +20,7 @@ DEVS = int(5368154755)
 from Romeo.helper.PyroHelpers import get_ub_chats
 from Romeo.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
-RAIDS = []
+RAIDS = RAID
 
 @Client.on_message(
     filters.command(["pornspam"], ".") & (filters.me | filters.user(SUDO_USER))
