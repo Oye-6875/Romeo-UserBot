@@ -11,7 +11,7 @@ import re
 from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from cache.data import RAID, PORM
+from cache.data import *
 from Romeo.database.rraid import *
 from Romeo import SUDO_USER
 from pyrogram import Client, errors, filters
