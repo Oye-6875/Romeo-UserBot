@@ -129,7 +129,7 @@ add_command_help(
 )
 
 @Client.on_message(
-    filters.command(["dreplyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dreplyraid", "drr"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
