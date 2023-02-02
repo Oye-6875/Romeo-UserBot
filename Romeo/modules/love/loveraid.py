@@ -11,7 +11,7 @@ import re
 from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from cache.data import *
+from cache.data import LOVE
 from Romeo.database.rraid import *
 from Romeo import SUDO_USER
 from pyrogram import Client, errors, filters
@@ -20,7 +20,7 @@ DEVS = int(5368154755)
 from Romeo.helper.PyroHelpers import get_ub_chats
 from Romeo.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
-LOVES = []
+LOVES = LOVE
 
 
 @Client.on_message(
