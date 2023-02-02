@@ -20,7 +20,7 @@ DEVS = int(5368154755)
 from Romeo.helper.PyroHelpers import get_ub_chats
 from Romeo.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
-LOVES = LOVE
+LOVES = []
 
 
 @Client.on_message(
@@ -81,7 +81,7 @@ async def raid(xspam: Client, e: Message):
                     await xspam.send_message(e.chat.id, msg)
                     await asyncio.sleep(0.10)
       else:
-          await e.reply_text("Usage: .raid count username")
+          await e.reply_text("Usage: .lr count username")
 
 
 add_command_help(
