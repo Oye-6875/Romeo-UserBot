@@ -14,7 +14,12 @@ from Romeo.modules.bot.inline import get_readable_time
 alive_logo = ALIVE_PIC or "https://telegra.ph/file/a62b9c7d9848afde0569e.jpg"
 
 if ALIVE_TEXT:
-   txt = ALIVE_TEXT
+   txt = """
+❥︎ 𝐀𝐋𝐈𝐕𝐄 ☟︎︎︎
+𝐇𝐞𝐥𝐥𝐨,
+𝐈'𝐦 𝐚 𝐑𝐨𝐦𝐞𝐨
+𝐔𝐬𝐞𝐫𝐁𝐨𝐭 𝐀𝐥𝐢𝐯𝐞 𝐍𝐨𝐰..
+"""
 else:
     txt = (
         f"** ✘ RomeoBot ✘**\n\n"
@@ -31,7 +36,7 @@ else:
     filters.command(["alive", "awake"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def alive(client: Client, message: Message):
-    xx = await message.reply_text("⚡️")
+    xx = await message.reply_text("❤️")
     try:
        await message.delete()
     except:
@@ -51,25 +56,17 @@ async def alive(client: Client, message: Message):
     except BaseException:
         await xx.edit(xd, disable_web_page_preview=True)
 
-@Client.on_message(filters.command("repo", ".") & filters.me)
-async def repo(bot: Client, message: Message):
-    await message.edit("⚡")
-    await asyncio.sleep(1)
-    await message.edit("Fetching Source Code.....")
-    await asyncio.sleep(1)
-    await message.edit("Here is repo: \n\n\nhttps://github.com/Romeo-RJ/Romeo-UserBot\nFork & Give an ⭐")
-
 
 @Client.on_message(filters.command("creator", ".") & filters.me)
 async def creator(bot: Client, message: Message):
-    await message.edit("https://gitHub.com/Romeo-RJ")
+    await message.edit("🇨𝐑𝐄𝐀𝐓𝐎𝐑 ❥︎ [𝕾🅡︎🅐︎🅙︎𝕾](https://t.me/Romeo_RJ_143)")
 
 
 @Client.on_message(filters.command(["uptime", "up"], ".") & filters.me)
 async def uptime(bot: Client, message: Message):
     now = datetime.now()
     current_uptime = now - START_TIME
-    await message.edit(f"Uptime ⚡\n" f"```{str(current_uptime).split('.')[0]}```")
+    await message.edit(f"Uptime 💞\n" f"```{str(current_uptime).split('.')[0]}```")
 
 
 @Client.on_message(filters.command("id", ".") & filters.me)
@@ -167,7 +164,6 @@ add_command_help(
     "start",
     [
         [".alive", "Check if the bot is alive or not."],
-        [".repo", "Display the repo of this userbot."],
         [".creator", "Show the creator of this userbot."],
         [".id", "Send id of what you replied to."],
         [".up `or` .uptime", "Check bot's current uptime."],
