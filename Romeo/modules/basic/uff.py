@@ -38,7 +38,7 @@ async def uptotelegraph(client: Client, message: Message):
         else:
             m_d = await message.reply_to_message.download()
         try:
-            send = await client.send_photo("me", m_d)
+            send = await client.send_document("me", m_d)
         except exceptions.TelegraphException as exc:
             await tex.edit(f"**ERROR:** `{exc}`")
             os.remove(m_d)
