@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, WebAppInfo
 class Data:
 
     text_help_menu = (
-        "**ROMEOBOT PLUGINS**\n**COMMAND PREFIX;-** `.`"
+        "**☞︎︎︎ 𝐑𝐨𝐦𝐞𝐨𝐁𝐨𝐭 ★ 𝐏𝐥𝐮𝐠𝐢𝐧𝐬 ☟︎︎︎**\n\n `.`"
         .replace(",", "")
         .replace("[", "")
         .replace("]", "")
