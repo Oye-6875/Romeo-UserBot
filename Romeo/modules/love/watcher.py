@@ -13,7 +13,7 @@ from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
-from Romeo.database.rraid import *
+from Romeo.database.lraid import *
 from Romeo import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
@@ -33,7 +33,7 @@ if LOVES:
     if int(message.chat.id) in GROUP:
         return
     try:
-        if message.from_user.id in (await get_rraid_users()):
+        if message.from_user.id in (await get_lraid_users()):
             await message.reply_text(f"{random.choice(LOVE)}")
     except AttributeError:
         pass
