@@ -12,7 +12,7 @@ from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.data import *
-from Romeo.database.rraid import *
+from Romeo.database.lraid import *
 from Romeo import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
@@ -24,7 +24,7 @@ LOVES = []
 
 
 @Client.on_message(
-    filters.command(["lr"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["lr", "loveraid"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def raid(xspam: Client, e: Message):  
       Romeo = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -43,7 +43,7 @@ async def raid(xspam: Client, e: Message):
                 text = f"Chal Chal baap Ko mat sikha"
                 await e.reply_text(text)
           elif int(id) in SUDO_USERS:
-                text = f"Abe Lawde that guy part of my devs."
+                text = f"Abe Nikal that guy part of my devs."
                 await e.reply_text(text)
           else:
               fname = ok.first_name
@@ -92,7 +92,7 @@ add_command_help(
 )
 
 @Client.on_message(
-    filters.command(["drlr"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["drlr", "dreplyloveraid"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
@@ -111,10 +111,10 @@ async def gmute_user(client: Client, message: Message):
         await ex.edit(f"`Please specify a valid user!`")
         return
     try:
-        if user.id not in (await get_rraid_users()):
+        if user.id not in (await get_lraid_users()):
            await ex.edit("Loveraid is not activated on this user")
            return
-        await unrraid_user(user.id)
+        await unlraid_user(user.id)
         LOVES.remove(user.id)
         await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) DeActivated LoveRaid!")
     except Exception as e:
