@@ -14,38 +14,23 @@ from Romeo.modules.bot.inline import get_readable_time
 alive_logo = ALIVE_PIC or "https://telegra.ph/file/a62b9c7d9848afde0569e.jpg"
 
 if ALIVE_TEXT:
-   txt = """
-❥︎ 𝐀𝐋𝐈𝐕𝐄 ☟︎︎︎
-𝐇𝐞𝐥𝐥𝐨,
-𝐈'𝐦 𝐚 𝐑𝐨𝐦𝐞𝐨
-𝐔𝐬𝐞𝐫𝐁𝐨𝐭 𝐀𝐥𝐢𝐯𝐞 𝐍𝐨𝐰..
-"""
-else:
-    txt = (
-        f"** ✘ RomeoBot ✘**\n\n"
-        f"❏ **νєяѕισи**: `1.0`\n"
-        f"├• **υρтιмє**: `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
-        f"├• **ρутнσи**: `{python_version()}`\n"
-        f"├• **ρуяσgяαм**: `{__version__}`\n"
-        f"├• **ѕυρρσят**: [Click](t.me/RomeoBot_op)\n"
-        f"├• **¢нαииєℓ**: [Click](t.me/Romeo_op)\n"
-        f"└• **яєρσ**: [Click](https://GitHub.com/Romeo-RJ/Romeo-Userbot)"        
+   txt = (
+        f"**❥︎ 𝐀𝐋𝐈𝐕𝐄 ☟︎︎︎**\n\n"
+        f"**🇻𝐄𝐑𝐒𝐈𝐎𝐍 ❥︎** `1.0`\n"
+        f"**🇺𝐏★🇹𝐈𝐌𝐄 ❥︎** `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
+        f"**🇵𝐘𝐓𝐇𝐎𝐍 ❥︎** `{python_version()}`\n"
+        f"**🇵𝐘𝐑𝐎𝐆𝐑𝐀𝐌 ❥︎** `{__version__}`\n"        
     )
+    
 
 @Client.on_message(
     filters.command(["alive", "awake"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def alive(client: Client, message: Message):
-    xx = await message.reply_text("❤️")
-    try:
-       await message.delete()
-    except:
-       pass
     send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
     xd = (f"{txt}")
     try:
         await asyncio.gather(
-            xx.delete(),
             send(
                 message.chat.id,
                 alive_logo,
@@ -54,7 +39,7 @@ async def alive(client: Client, message: Message):
             ),
         )
     except BaseException:
-        await xx.edit(xd, disable_web_page_preview=True)
+        await message.reply_text(xd, disable_web_page_preview=True)
 
 
 @Client.on_message(filters.command("creator", ".") & filters.me)
@@ -167,12 +152,5 @@ add_command_help(
         [".creator", "Show the creator of this userbot."],
         [".id", "Send id of what you replied to."],
         [".up `or` .uptime", "Check bot's current uptime."],
-    ],
-)
-
-add_command_help(
-    "restart",
-    [
-        [".restart", "You are retarded if you do not know what this does."],
     ],
 )
