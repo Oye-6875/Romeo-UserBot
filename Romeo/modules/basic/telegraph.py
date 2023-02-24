@@ -69,9 +69,5 @@ add_command_help(
             f"telegraph `or` .tg",
             "To upload on telegraph.",
         ],
-        [
-            f"op `or` .uff",
-            "To reply documents.",
-        ],
     ],
 )
