@@ -31,6 +31,7 @@ async def alive(client: Client, message: Message):
     xd = (f"{txt}")
     try:
         await asyncio.gather(
+            message.delete(),
             send(
                 message.chat.id,
                 alive_logo,
