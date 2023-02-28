@@ -19,7 +19,7 @@ async def gban_user(client: Client, message: Message):
     if not user_id:
         return await ex.edit("I can't find that user.")
     if user_id == client.me.id:
-        return await ex.edit("**Okay Done... 🐽**")
+        return await ex.edit("**Okay Done... **")
     if user_id in DEVS:
         return await ex.edit("**Baap ko Mat sikha 🗿**")
     if user_id:
@@ -119,7 +119,7 @@ async def gbanlist(client: Client, message: Message):
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
-    ex = await message.edit_text(message, "`Processing...`")
+    ex = await message.edit_text("`Processing...`")
     if args:
         try:
             user = await client.get_users(args)
