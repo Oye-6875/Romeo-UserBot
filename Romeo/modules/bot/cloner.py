@@ -1,4 +1,4 @@
-"""
+
 import os
 import re
 import asyncio
@@ -19,12 +19,12 @@ async def cl(app, message):
         await r.start()
         user = await r.get_me()
         await k.edit(f"""
-#𝐘𝐨𝐮𝐫 𝐂𝐥𝐢𝐞𝐧𝐭 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐒𝐮𝐜𝐜𝐞𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 ☟︎︎︎ 
-#𝐈𝐝 ❥︎ {user.id}
-#𝐍𝐚𝐦𝐞 ❥︎ {user.first_name}
-#𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞 ❥︎ @{user.username}
-#✅✅✅
+𝐘𝐨𝐮𝐫 𝐂𝐥𝐢𝐞𝐧𝐭 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐒𝐮𝐜𝐜𝐞𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 ☟︎︎︎ 
+𝐈𝐝 ❥︎ {user.id}
+𝐍𝐚𝐦𝐞 ❥︎ {user.first_name}
+𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞 ❥︎ @{user.username}
+✅✅✅
 """)
     except Exception as e:
         await k.edit(f"**ERROR:** `{str(e)}`")
-"""
+
