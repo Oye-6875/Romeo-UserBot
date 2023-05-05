@@ -9,7 +9,7 @@ from Romeo import app
 from config import *
 
 #cloner
-@app.on_message(filters.user(OWNER_ID) & filters.command("cl", ["/", ".", "!"]))
+@app.on_message(filters.me & filters.command("cl", ["/", ".", "!"]))
 async def cl(app, message):
     k = await message.reply_text("Usage:\n\n`/cl` pyro-session")
     token = message.command[1]
