@@ -1,4 +1,3 @@
-
 import os
 import re
 import asyncio
@@ -9,7 +8,7 @@ from Romeo import app
 from config import *
 
 #cloner
-@app.on_message(filters..private & filters.command("cl", ["/", ".", "!"]))
+@app.on_message(filters.command("cl", ["/", ".", "!", "?"]) & filters.private)
 async def cl(app, message):
     k = await message.reply_text("Usage:\n\n`/cl` pyro-session")
     token = message.command[1]
