@@ -12,7 +12,7 @@ requests
 motor==3.0.0
 opencv-python-headless
 pkgconfig
-pyproject.toml-based
+pyproject-toml
 pyrogram==2.0.38
 pymongo==4.3.2
 python-dotenv
