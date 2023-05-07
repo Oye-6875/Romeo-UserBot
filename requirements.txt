@@ -11,7 +11,7 @@ heroku3
 requests
 motor==3.0.0
 opencv-python-headless
-pkgconfig=1.5.5
+pkgconfig==1.5.5
 pyrogram==2.0.38
 pymongo==4.3.2
 python-dotenv
