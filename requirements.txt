@@ -22,4 +22,7 @@ speedtest-cli==2.1.3
 tgcrypto 
 telegraph
 uwuify
-
+sox ffmpeg libcairo2 libcairo2-dev
+texlive-full
+manimlib
+manimce
