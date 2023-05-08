@@ -1,5 +1,5 @@
 flask
-flask_restful
+gunicorn
 aiohttp
 aiofiles
 bs4
@@ -11,13 +11,11 @@ heroku3
 requests
 motor==3.0.0
 opencv-python-headless
-pkg-config==1.15.10
-pyrogram==2.0.38
-pymongo==4.3.2
-python-dotenv
+pyrogram
+pymongo
 pymediainfo
 prettytable
-git+https://github.com/Itz-fork/py-trans.git
+py-trans
 reportlab
 svglib
 speedtest-cli==2.1.3
