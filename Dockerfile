@@ -10,6 +10,7 @@ RUN python3 -m venv venv
 WORKDIR /app
 COPY . /app/
 WORKDIR /app/
+RUN pip install --upgrade pip
 RUN pip3 install -U -r requirements.txt
 EXPOSE 5000
 RUN chmod +x /app/start.sh
