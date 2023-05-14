@@ -32,7 +32,7 @@ pymediainfo
 
 prettytable
 
-git+https://github.com/Itz-fork/py-trans.git
+py-trans
 
 reportlab
 
