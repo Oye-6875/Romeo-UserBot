@@ -11,4 +11,6 @@ WORKDIR /app
 COPY . /app/
 WORKDIR /app/
 RUN pip3 install -U -r requirements.txt
-CMD python3 -m Romeo
+EXPOSE 5000
+RUN chmod +x /app/start.sh
+ENTRYPOINT ["./start.sh"]
