@@ -28,6 +28,7 @@ LOVES = []
 )
 async def raid(xspam: Client, e: Message):  
       Romeo = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      await message.delete()
       if len(Romeo) == 2:
           counts = int(Romeo[0])
           if int(e.chat.id) in GROUP:
